@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace tp1_simulacion
 {
-    internal class Historial
+    public class Historial
     {
         private Point posicion;
         private int pasos;
@@ -34,6 +34,11 @@ namespace tp1_simulacion
         public int Dia
         {
             get { return pasos / 10; }
+        }
+
+        public int Paso
+        {
+            get { return pasos % 10; }
         }
 
         public int DiasSinComer

@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace tp1_simulacion
 {
-    abstract class Alimento
+    public abstract class Alimento
     {
         private Point posicion;
         protected int porcion;

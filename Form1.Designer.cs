@@ -298,6 +298,7 @@
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Name = "Form1";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Isla - Simulacion";
             ((System.ComponentModel.ISupportInitialize)(this.numYisla)).EndInit();
             this.groupBox1.ResumeLayout(false);

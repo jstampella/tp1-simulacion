@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace tp1_simulacion
 {
-    abstract class Animal:IAnimal
+    public abstract class Animal:IAnimal
     {
         protected Point posicion;
         private static int nro=0;
@@ -17,7 +17,7 @@ namespace tp1_simulacion
         protected int ingestas;
         protected Point limiteArea;
         protected EEstadoVida estado;
-        private int diasDeVida;
+        protected int diasDeVida;
         protected int avance;
         protected ArrayList historial = new ArrayList();
         protected int pasos;

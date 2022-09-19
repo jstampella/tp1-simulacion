@@ -61,6 +61,7 @@ namespace tp1_simulacion
             {
                 ingestas = 0;
                 diasSinComer++;
+                diasDeVida++;
             }
             int cant = random.Next(1, 3);
             int direccion = random.Next(1, 5);

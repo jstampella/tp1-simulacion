@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace tp1_simulacion
 {
-    enum EEstadoVida
+    public enum EEstadoVida
     {
         Ahogamiento,
         Inanicion,
@@ -14,13 +14,13 @@ namespace tp1_simulacion
         Vivo
     }
 
-    enum ETipoAnimal
+    public enum ETipoAnimal
     {
         Gato,
         Raton
     }
 
-    enum EEstado
+    public enum EEstado
     {
         Iniciado,
         SobrePoblacion,
@@ -28,7 +28,7 @@ namespace tp1_simulacion
         SinPredador
     }
 
-    enum ESexo
+    public enum ESexo
     {
         Macho,
         Hembra

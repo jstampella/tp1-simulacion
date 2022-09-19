@@ -20,11 +20,12 @@ namespace tp1_simulacion
         private int ratonInitial;
         private int quesosInitial;
         Thread t;
+        private HistorialAll hisAll;
         public Simulacion(int medWidth,int medHeight,int queso, int raton,bool hembra=false,int gatos=0)
         {
             t = new Thread(new ThreadStart(StartForm));
             t.Start();
-            Thread.Sleep(0);
+            Thread.Sleep(100);
             this.Hide();
             InitializeComponent();
             //establece valores para optimizar el parpadeo de los controles
@@ -48,6 +49,9 @@ namespace tp1_simulacion
             else
             {
                 islaSimul = new Isla(islaDimension, raton, queso, hembra);
+                pictureBox1.Visible = false;
+                lblGatos.Visible = false;
+                gMuertos.Visible = false;
             }
 
             //damos forma al mapa para centrarlo al agua
@@ -141,6 +145,7 @@ namespace tp1_simulacion
                         Npanel.Image = Properties.Resources.cat;
                         Npanel.SizeMode = PictureBoxSizeMode.StretchImage;
                         Npanel.Click += new System.EventHandler(this.panel_Click);
+                        Npanel.Cursor = Cursors.Hand;
                         mapa.Controls.Add(Npanel);
                     }
                     if (nn.Estado == EEstadoVida.Vivo)
@@ -173,6 +178,7 @@ namespace tp1_simulacion
                     Npanel.Name = "raton-" + nn.Nro;
                     Npanel.SizeMode = PictureBoxSizeMode.StretchImage;
                     Npanel.Click += new System.EventHandler(this.panel_Click);
+                    Npanel.Cursor = Cursors.Hand;
                     if (nn is Hembra)
                         Npanel.Image = Properties.Resources.ratonHembra;
                     else
@@ -223,6 +229,7 @@ namespace tp1_simulacion
                         Npanel.SizeMode = PictureBoxSizeMode.StretchImage;
                         Npanel.Image = Properties.Resources.queso;
                         Npanel.Click += new System.EventHandler(this.panel_Click);
+                        Npanel.Cursor = Cursors.Hand;
                         mapa.Controls.Add(Npanel);
                     }
                     if (nn.Porcion < 2)
@@ -311,12 +318,12 @@ namespace tp1_simulacion
             }
             else
             {
-                if((islaDimension.X* islaDimension.Y) > 100)
+                if(cbGraficar.Checked)
                 {
-                    avanzarTimer.Interval = 10;
+                    avanzarTimer.Interval = 500;
                 }
                 else {
-                    avanzarTimer.Interval = 500;
+                    avanzarTimer.Interval = 50;
                 }
                 avanzarTimer.Start();
                 btnAvanzartimer.Text = "Parar";
@@ -328,7 +335,7 @@ namespace tp1_simulacion
         {
             lblAlimentos.Text = islaSimul.CantAlimentos.ToString();
             lblRatones.Text = islaSimul.CantRoedores.ToString();
-            lblDimension.Text = "Col:" + islaDimension.X + " Row:" + islaDimension.Y + "Cas:" + (islaDimension.X * islaDimension.Y);
+            lblDimension.Text = "Col:" + islaDimension.X + " Row:" + islaDimension.Y + " Cas:" + (islaDimension.X * islaDimension.Y);
             if (islaSimul is IslaPredador isp)
                 lblGatos.Text = isp.CantPredador.ToString();
             AgregarAnimales();
@@ -354,31 +361,87 @@ namespace tp1_simulacion
                 case "raton":
                     nn = islaSimul.VerRoedoresNro(Convert.ToInt32(palabras[1]));  
                     break;
-                case "gato":
+                case "predador":
                     nn = ((IslaPredador)islaSimul).VerPredadorNro(Convert.ToInt32(palabras[1]));
                     break;
             }
             if (nn !=null)
             {
-                fm.lbNro.Text = nn.Nro.ToString();
+                fm.lbNro.Text = "Nro:" + nn.Nro.ToString();
                 fm.lbVida.Text = nn.DiasDeVida.ToString();
                 fm.lbEstado.Text = nn.Estado.ToString();
+                fm.lblTipo.Text = nn.Soy().ToString();
                 fm.dgHistorial.Rows.Clear();
                 Historial[] hist = nn.GetHistorial();
 
                 foreach (Historial item in hist)
                 {
-                    string[] rw = { item.Posicion.ToString(),item.DiasSinComer.ToString(),item.Avance.ToString(),item.Dia.ToString() };
+                    string[] rw = { item.Posicion.ToString(),item.DiasSinComer.ToString(),item.Avance.ToString(),item.Dia.ToString(), item.Paso.ToString() };
                     fm.dgHistorial.Rows.Add(rw);
                 }
                 fm.ShowDialog();
               
-                //MessageBox.Show("Posicion: "+nn.Posicion+" Dias de vida:"+nn.DiasDeVida +" dias sin comer:" + nn.DiasSinComer);
             }
             if (al != null)
             {
-                //MessageBox.Show("Posicion:" + al.Posicion +" Porcion:" + al.Porcion);
+                MessageBox.Show("Posicion:" + al.Posicion +" Porcion:" + al.Porcion,"QUESO",MessageBoxButtons.OK,MessageBoxIcon.Information);
             }
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+            if(islaSimul is IslaPredador islP)
+            {
+                hisAll = new HistorialAll(ref islaSimul);
+                hisAll.Text = "Listado de Gatos";
+                hisAll.dgHistorial.Rows.Clear();
+                hisAll.lblCant.Text = islP.CantPredador.ToString();
+                hisAll.lblTitulo.Text = "GATOS";
+                for (int i = 0; i < islP.CantPredador; i++)
+                {
+                    Animal item = islP.VerPredador(i);
+                    string[] rw = {item.Nro.ToString(), item.Posicion.ToString(),item.DiasDeVida.ToString(),item.DiasSinComer.ToString(),item.Estado.ToString(),"VER" };
+                    hisAll.dgHistorial.Rows.Add(rw);
+                }
+                hisAll.ShowDialog();
+            }
+        }
+
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+            hisAll = new HistorialAll(ref islaSimul);
+            hisAll.Text = "Listado de Queso";
+            hisAll.dgHistorial.Rows.Clear();
+            hisAll.dgHistorial.Columns.Clear();
+            hisAll.dgHistorial.Columns.Add("nro", "Nro");
+            hisAll.dgHistorial.Columns.Add("posicion", "Posicion");
+            hisAll.dgHistorial.Columns.Add("porcion", "Porcion");
+            hisAll.dgHistorial.Columns.Add("estado", "Estado");
+            hisAll.lblCant.Text = islaSimul.CantAlimentos.ToString();
+            hisAll.lblTitulo.Text = "QUESOS";
+            for (int i = 0; i < islaSimul.CantAlimentos; i++)
+            {
+                Alimento item = islaSimul.VerAlimento(i);
+                string[] rw = { item.Nro.ToString(), item.Posicion.ToString(), item.Porcion.ToString(), item.Vacio() ?"Inactivo":"Activo" };
+                hisAll.dgHistorial.Rows.Add(rw);
+            }
+            hisAll.ShowDialog();
+        }
+
+        private void pictureBox3_Click(object sender, EventArgs e)
+        {
+            hisAll = new HistorialAll(ref islaSimul);
+            hisAll.Text = "Listado de Ratones";
+            hisAll.dgHistorial.Rows.Clear();
+            hisAll.lblCant.Text = islaSimul.CantRoedores.ToString();
+            hisAll.lblTitulo.Text = "RATONES";
+            for (int i = 0; i < islaSimul.CantRoedores; i++)
+            {
+                Animal item = islaSimul.VerRoedores(i);
+                string[] rw = { item.Nro.ToString(), item.Posicion.ToString(), item.DiasDeVida.ToString(), item.Estado.ToString(), "VER" };
+                hisAll.dgHistorial.Rows.Add(rw);
+            }
+            hisAll.ShowDialog();
         }
     }
 

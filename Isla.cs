@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace tp1_simulacion
 {
-    class Isla
+    public class Isla
     {
         protected ArrayList roedores = new ArrayList();
         protected ArrayList alimentos = new ArrayList();

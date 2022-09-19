@@ -64,6 +64,12 @@
     <Compile Include="Gato.cs" />
     <Compile Include="Hembra.cs" />
     <Compile Include="Historial.cs" />
+    <Compile Include="HistorialAll.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HistorialAll.Designer.cs">
+      <DependentUpon>HistorialAll.cs</DependentUpon>
+    </Compile>
     <Compile Include="IAnimal.cs" />
     <Compile Include="Isla.cs" />
     <Compile Include="IslaPredador.cs" />
@@ -88,6 +94,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormHistorial.resx">
       <DependentUpon>FormHistorial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HistorialAll.resx">
+      <DependentUpon>HistorialAll.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Loading.resx">
       <DependentUpon>Loading.cs</DependentUpon>

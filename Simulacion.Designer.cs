@@ -42,23 +42,23 @@
             this.gMuertos = new System.Windows.Forms.Label();
             this.qMuerto = new System.Windows.Forms.Label();
             this.rMuertos = new System.Windows.Forms.Label();
+            this.cbGraficar = new System.Windows.Forms.CheckBox();
+            this.pictureBox3 = new System.Windows.Forms.PictureBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panelContenedor = new System.Windows.Forms.Panel();
             this.mapa = new System.Windows.Forms.Panel();
-            this.cbGraficar = new System.Windows.Forms.CheckBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.panelContenedor.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.panelContenedor.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnAvanzar
             // 
-            this.btnAvanzar.Location = new System.Drawing.Point(14, 50);
+            this.btnAvanzar.Location = new System.Drawing.Point(14, 41);
             this.btnAvanzar.Name = "btnAvanzar";
-            this.btnAvanzar.Size = new System.Drawing.Size(122, 23);
+            this.btnAvanzar.Size = new System.Drawing.Size(122, 32);
             this.btnAvanzar.TabIndex = 2;
             this.btnAvanzar.Text = "Avanzar";
             this.btnAvanzar.UseVisualStyleBackColor = true;
@@ -68,9 +68,10 @@
             // 
             this.lblRatones.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblRatones.AutoSize = true;
-            this.lblRatones.Location = new System.Drawing.Point(772, 51);
+            this.lblRatones.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblRatones.Location = new System.Drawing.Point(731, 39);
             this.lblRatones.Name = "lblRatones";
-            this.lblRatones.Size = new System.Drawing.Size(14, 16);
+            this.lblRatones.Size = new System.Drawing.Size(24, 25);
             this.lblRatones.TabIndex = 3;
             this.lblRatones.Text = "0";
             // 
@@ -78,9 +79,11 @@
             // 
             this.lblAlimentos.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblAlimentos.AutoSize = true;
-            this.lblAlimentos.Location = new System.Drawing.Point(673, 51);
+            this.lblAlimentos.BackColor = System.Drawing.Color.Transparent;
+            this.lblAlimentos.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAlimentos.Location = new System.Drawing.Point(617, 39);
             this.lblAlimentos.Name = "lblAlimentos";
-            this.lblAlimentos.Size = new System.Drawing.Size(14, 16);
+            this.lblAlimentos.Size = new System.Drawing.Size(24, 25);
             this.lblAlimentos.TabIndex = 4;
             this.lblAlimentos.Text = "0";
             // 
@@ -88,9 +91,10 @@
             // 
             this.lblGatos.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.lblGatos.AutoSize = true;
-            this.lblGatos.Location = new System.Drawing.Point(566, 52);
+            this.lblGatos.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblGatos.Location = new System.Drawing.Point(485, 39);
             this.lblGatos.Name = "lblGatos";
-            this.lblGatos.Size = new System.Drawing.Size(14, 16);
+            this.lblGatos.Size = new System.Drawing.Size(24, 25);
             this.lblGatos.TabIndex = 5;
             this.lblGatos.Text = "0";
             // 
@@ -100,7 +104,7 @@
             this.lblBebes.AutoSize = true;
             this.lblBebes.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblBebes.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.lblBebes.Location = new System.Drawing.Point(773, 66);
+            this.lblBebes.Location = new System.Drawing.Point(768, 68);
             this.lblBebes.Name = "lblBebes";
             this.lblBebes.Size = new System.Drawing.Size(15, 16);
             this.lblBebes.TabIndex = 4;
@@ -112,7 +116,7 @@
             this.lbqMas.AutoSize = true;
             this.lbqMas.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbqMas.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.lbqMas.Location = new System.Drawing.Point(673, 66);
+            this.lbqMas.Location = new System.Drawing.Point(654, 69);
             this.lbqMas.Name = "lbqMas";
             this.lbqMas.Size = new System.Drawing.Size(15, 16);
             this.lbqMas.TabIndex = 5;
@@ -132,7 +136,7 @@
             // 
             this.btnAvanzartimer.Location = new System.Drawing.Point(14, 79);
             this.btnAvanzartimer.Name = "btnAvanzartimer";
-            this.btnAvanzartimer.Size = new System.Drawing.Size(122, 23);
+            this.btnAvanzartimer.Size = new System.Drawing.Size(122, 34);
             this.btnAvanzartimer.TabIndex = 11;
             this.btnAvanzartimer.Text = "Simular";
             this.btnAvanzartimer.UseVisualStyleBackColor = true;
@@ -159,7 +163,7 @@
             this.gMuertos.AutoSize = true;
             this.gMuertos.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gMuertos.ForeColor = System.Drawing.Color.Red;
-            this.gMuertos.Location = new System.Drawing.Point(565, 80);
+            this.gMuertos.Location = new System.Drawing.Point(524, 93);
             this.gMuertos.Name = "gMuertos";
             this.gMuertos.Size = new System.Drawing.Size(29, 20);
             this.gMuertos.TabIndex = 14;
@@ -171,7 +175,7 @@
             this.qMuerto.AutoSize = true;
             this.qMuerto.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.qMuerto.ForeColor = System.Drawing.Color.Red;
-            this.qMuerto.Location = new System.Drawing.Point(672, 80);
+            this.qMuerto.Location = new System.Drawing.Point(654, 93);
             this.qMuerto.Name = "qMuerto";
             this.qMuerto.Size = new System.Drawing.Size(29, 20);
             this.qMuerto.TabIndex = 15;
@@ -183,11 +187,60 @@
             this.rMuertos.AutoSize = true;
             this.rMuertos.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rMuertos.ForeColor = System.Drawing.Color.Red;
-            this.rMuertos.Location = new System.Drawing.Point(772, 80);
+            this.rMuertos.Location = new System.Drawing.Point(768, 93);
             this.rMuertos.Name = "rMuertos";
             this.rMuertos.Size = new System.Drawing.Size(29, 20);
             this.rMuertos.TabIndex = 16;
             this.rMuertos.Text = "00";
+            // 
+            // cbGraficar
+            // 
+            this.cbGraficar.AutoSize = true;
+            this.cbGraficar.Location = new System.Drawing.Point(142, 93);
+            this.cbGraficar.Name = "cbGraficar";
+            this.cbGraficar.Size = new System.Drawing.Size(76, 20);
+            this.cbGraficar.TabIndex = 19;
+            this.cbGraficar.Text = "Graficar";
+            this.cbGraficar.UseVisualStyleBackColor = true;
+            // 
+            // pictureBox3
+            // 
+            this.pictureBox3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBox3.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBox3.Image = global::tp1_simulacion.Properties.Resources.raton;
+            this.pictureBox3.Location = new System.Drawing.Point(716, 66);
+            this.pictureBox3.Name = "pictureBox3";
+            this.pictureBox3.Size = new System.Drawing.Size(50, 50);
+            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox3.TabIndex = 22;
+            this.pictureBox3.TabStop = false;
+            this.pictureBox3.Click += new System.EventHandler(this.pictureBox3_Click);
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBox2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBox2.Image = global::tp1_simulacion.Properties.Resources.queso;
+            this.pictureBox2.Location = new System.Drawing.Point(602, 66);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(50, 50);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox2.TabIndex = 21;
+            this.pictureBox2.TabStop = false;
+            this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.pictureBox1.Image = global::tp1_simulacion.Properties.Resources.cat;
+            this.pictureBox1.Location = new System.Drawing.Point(472, 66);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(50, 50);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 20;
+            this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // panelContenedor
             // 
@@ -216,49 +269,6 @@
             this.mapa.Size = new System.Drawing.Size(733, 249);
             this.mapa.TabIndex = 0;
             // 
-            // cbGraficar
-            // 
-            this.cbGraficar.AutoSize = true;
-            this.cbGraficar.Location = new System.Drawing.Point(142, 81);
-            this.cbGraficar.Name = "cbGraficar";
-            this.cbGraficar.Size = new System.Drawing.Size(76, 20);
-            this.cbGraficar.TabIndex = 19;
-            this.cbGraficar.Text = "Graficar";
-            this.cbGraficar.UseVisualStyleBackColor = true;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureBox1.Image = global::tp1_simulacion.Properties.Resources.cat;
-            this.pictureBox1.Location = new System.Drawing.Point(510, 52);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(50, 50);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 20;
-            this.pictureBox1.TabStop = false;
-            // 
-            // pictureBox2
-            // 
-            this.pictureBox2.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureBox2.Image = global::tp1_simulacion.Properties.Resources.queso;
-            this.pictureBox2.Location = new System.Drawing.Point(617, 52);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(50, 50);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 21;
-            this.pictureBox2.TabStop = false;
-            // 
-            // pictureBox3
-            // 
-            this.pictureBox3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.pictureBox3.Image = global::tp1_simulacion.Properties.Resources.raton;
-            this.pictureBox3.Location = new System.Drawing.Point(716, 52);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(50, 50);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox3.TabIndex = 22;
-            this.pictureBox3.TabStop = false;
-            // 
             // Simulacion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -286,10 +296,10 @@
             this.Text = "Simulacion";
             this.Load += new System.EventHandler(this.Simulacion_Load);
             this.Shown += new System.EventHandler(this.Simulacion_Shown);
-            this.panelContenedor.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.panelContenedor.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
