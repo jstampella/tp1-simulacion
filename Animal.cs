@@ -8,10 +8,10 @@ using System.Threading.Tasks;
 
 namespace tp1_simulacion
 {
-    public abstract class Animal:IAnimal
+    public abstract class Animal : IAnimal
     {
         protected Point posicion;
-        private static int nro=0;
+        private static int nro = 0;
         protected int numeroIden;
         protected int diasSinComer;
         protected int ingestas;
@@ -23,7 +23,7 @@ namespace tp1_simulacion
         protected int pasos;
         protected static Random random = new Random();
 
-        public Animal(Point posicion,Point limiteArea, int pasosCreado)
+        public Animal(Point posicion, Point limiteArea, int pasosCreado)
         {
             this.posicion = posicion;
             this.diasSinComer = 0;
@@ -37,6 +37,11 @@ namespace tp1_simulacion
             numeroIden = nro;
             Historial his = new Historial(posicion, pasosCreado, 0, 0, this.avance, this.estado);
             historial.Add(his);
+        }
+
+        public static int NroStatic
+        {
+            set { nro = value; }
         }
 
         public Point Posicion

@@ -120,16 +120,16 @@ namespace tp1_simulacion
                 cantAlimentos = alimentos.Count;
             }
             cantRoedores = roedores.Count;
-            if (!bandera && posiblesBebes == null)
-                estado = EEstado.Eliminado;
             int roedoresVivos = cantRoedores - CantRoedoresMuertos();
             if (roedoresVivos > dimensionIsla.X * dimensionIsla.Y)
                 estado = EEstado.SobrePoblacion;
-            else if (roedoresVivos == 0)
+            else if (roedoresVivos == 0 && posiblesBebes == null)
             {
                 estado = EEstado.Eliminado;
             }
-            return bandera;
+            if(!bandera)
+                pasos--;
+            return estado==EEstado.Iniciado?true:false;
         }
 
         public void CrearQuesos(int cant)

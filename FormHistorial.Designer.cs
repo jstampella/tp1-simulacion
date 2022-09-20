@@ -58,6 +58,7 @@
             this.dgHistorial.Location = new System.Drawing.Point(12, 113);
             this.dgHistorial.Name = "dgHistorial";
             this.dgHistorial.ReadOnly = true;
+            this.dgHistorial.RowHeadersVisible = false;
             this.dgHistorial.RowHeadersWidth = 51;
             this.dgHistorial.RowTemplate.Height = 24;
             this.dgHistorial.Size = new System.Drawing.Size(666, 325);

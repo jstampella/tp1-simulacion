@@ -21,6 +21,11 @@ namespace tp1_simulacion
             numeroIden = nro;
         }
 
+        public static int NroStatic
+        {
+            set { nro = value; }
+        }
+
         public Point Posicion
         {
             get { return posicion; }

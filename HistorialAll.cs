@@ -21,44 +21,57 @@ namespace tp1_simulacion
 
         private void dgHistorial_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
-            string arg = dgHistorial.Rows[e.RowIndex].Cells[e.ColumnIndex].Value.ToString();
-            if(arg == "VER")
+            if(e.RowIndex>-1 && e.RowIndex > -1)
             {
-                FormHistorial fm = new FormHistorial();
-                Animal nn = null;
-                int nro = Convert.ToInt32(dgHistorial.Rows[e.RowIndex].Cells[0].Value);
-                if(isll is IslaPredador islP)
+                string arg = dgHistorial.Rows[e.RowIndex].Cells[e.ColumnIndex].Value.ToString();
+                if (arg == "VER")
                 {
-                    if(lblTitulo.Text == "RATONES")
+                    FormHistorial fm = new FormHistorial();
+                    Animal nn = null;
+                    int nro = Convert.ToInt32(dgHistorial.Rows[e.RowIndex].Cells[1].Value);
+                    if (isll is IslaPredador islP)
                     {
-                        nn = islP.VerRoedoresNro(nro);
+                        if (lblTitulo.Text == "RATONES")
+                        {
+                            nn = islP.VerRoedoresNro(nro);
+                        }
+                        else
+                        {
+                            nn = islP.VerPredadorNro(nro);
+                        }
                     }
                     else
                     {
-                        nn = islP.VerPredadorNro(nro);
-                    }  
-                }
-                else
-                {
-                    if (lblTitulo.Text == "RATONES")
-                    {
-                        nn = isll.VerRoedoresNro(nro);
+                        if (lblTitulo.Text == "RATONES")
+                        {
+                            nn = isll.VerRoedoresNro(nro);
+                        }
                     }
-                }
 
-                fm.lbNro.Text = "Nro:"+nn.Nro.ToString();
-                fm.lbVida.Text = nn.DiasDeVida.ToString();
-                fm.lbEstado.Text = nn.Estado.ToString();
-                fm.lblTipo.Text = nn.Soy().ToString();
-                fm.dgHistorial.Rows.Clear();
-                Historial[] hist = nn.GetHistorial();
+                    fm.lbNro.Text = "ID:" + nn.Nro.ToString();
+                    fm.lbVida.Text = nn.DiasDeVida.ToString();
+                    fm.lbEstado.Text = nn.Estado.ToString();
+                    fm.lblTipo.Text = nn.Soy().ToString();
+                    fm.dgHistorial.Rows.Clear();
+                    Historial[] hist = nn.GetHistorial();
 
-                foreach (Historial item in hist)
-                {
-                    string[] rw = { item.Posicion.ToString(), item.DiasSinComer.ToString(), item.Avance.ToString(), item.Dia.ToString(), item.Paso.ToString() };
-                    fm.dgHistorial.Rows.Add(rw);
+                    foreach (Historial item in hist)
+                    {
+                        string[] rw = { item.Posicion.ToString(), item.DiasSinComer.ToString(), item.Avance.ToString(), item.Dia.ToString(), item.Paso.ToString() };
+                        fm.dgHistorial.Rows.Add(rw);
+                    }
+                    fm.ShowDialog();
                 }
-                fm.ShowDialog();
+            }
+            
+        }
+
+        private void dgHistorial_SortCompare(object sender, DataGridViewSortCompareEventArgs e)
+        {
+            if (e.Column.Index == 0)
+            {
+                e.SortResult = int.Parse(e.CellValue1.ToString()).CompareTo(int.Parse(e.CellValue2.ToString()));
+                e.Handled = true;//pass by the default sorting
             }
         }
     }
