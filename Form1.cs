@@ -79,7 +79,8 @@ namespace tp1_simulacion
             {
                 MessageBox.Show("Minimo la mitad de los Ratones", "Queso", MessageBoxButtons.OK);
                 e.Handled = true;
-            }else if (valor > Convert.ToInt32(numRatones.Value))
+            }
+            else if (valor > Convert.ToInt32(numRatones.Value))
             {
                 MessageBox.Show("Maximo la cant Ratones", "Queso", MessageBoxButtons.OK);
                 e.Handled = true;

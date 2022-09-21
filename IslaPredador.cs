@@ -41,7 +41,7 @@ namespace tp1_simulacion
         public override bool AvanzarPaso()
         {
             base.AvanzarPaso();
-            if(estado != EEstado.Eliminado)
+            if(estado==EEstado.Iniciado)
             {
                 estado = EEstado.SinPredador;
                 foreach (Animal item in predador)

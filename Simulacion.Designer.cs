@@ -45,19 +45,19 @@
             this.cbGraficar = new System.Windows.Forms.CheckBox();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.panel3 = new System.Windows.Forms.Panel();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.panel3 = new System.Windows.Forms.Panel();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.panelContenedor = new System.Windows.Forms.Panel();
             this.mapa = new System.Windows.Forms.Panel();
             this.flowLayoutPanel1.SuspendLayout();
             this.panel1.SuspendLayout();
-            this.panel2.SuspendLayout();
-            this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.panelContenedor.SuspendLayout();
             this.SuspendLayout();
@@ -81,7 +81,7 @@
             this.lblRatones.Size = new System.Drawing.Size(91, 25);
             this.lblRatones.TabIndex = 3;
             this.lblRatones.Text = "0";
-            this.lblRatones.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.lblRatones.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
             // lblAlimentos
             // 
@@ -93,7 +93,7 @@
             this.lblAlimentos.Size = new System.Drawing.Size(93, 25);
             this.lblAlimentos.TabIndex = 4;
             this.lblAlimentos.Text = "0";
-            this.lblAlimentos.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.lblAlimentos.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
             // lblGatos
             // 
@@ -104,7 +104,7 @@
             this.lblGatos.Size = new System.Drawing.Size(92, 25);
             this.lblGatos.TabIndex = 5;
             this.lblGatos.Text = "0";
-            this.lblGatos.TextAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.lblGatos.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
             // lblBebes
             // 
@@ -131,9 +131,9 @@
             // lblDimension
             // 
             this.lblDimension.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblDimension.Location = new System.Drawing.Point(528, 9);
+            this.lblDimension.Location = new System.Drawing.Point(240, 44);
             this.lblDimension.Name = "lblDimension";
-            this.lblDimension.Size = new System.Drawing.Size(275, 16);
+            this.lblDimension.Size = new System.Drawing.Size(181, 25);
             this.lblDimension.TabIndex = 10;
             this.lblDimension.Text = "colXrow";
             this.lblDimension.TextAlign = System.Drawing.ContentAlignment.TopRight;
@@ -152,7 +152,7 @@
             // 
             this.lblPasos.AutoSize = true;
             this.lblPasos.Font = new System.Drawing.Font("Microsoft Sans Serif", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPasos.Location = new System.Drawing.Point(227, 15);
+            this.lblPasos.Location = new System.Drawing.Point(235, 15);
             this.lblPasos.Name = "lblPasos";
             this.lblPasos.Size = new System.Drawing.Size(186, 29);
             this.lblPasos.TabIndex = 13;
@@ -230,30 +230,6 @@
             this.panel1.Size = new System.Drawing.Size(92, 79);
             this.panel1.TabIndex = 24;
             // 
-            // panel2
-            // 
-            this.panel2.AutoSize = true;
-            this.panel2.Controls.Add(this.lblAlimentos);
-            this.panel2.Controls.Add(this.pictureBox2);
-            this.panel2.Controls.Add(this.lbqMas);
-            this.panel2.Controls.Add(this.qMuerto);
-            this.panel2.Location = new System.Drawing.Point(101, 3);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(93, 79);
-            this.panel2.TabIndex = 24;
-            // 
-            // panel3
-            // 
-            this.panel3.AutoSize = true;
-            this.panel3.Controls.Add(this.lblRatones);
-            this.panel3.Controls.Add(this.pictureBox3);
-            this.panel3.Controls.Add(this.lblBebes);
-            this.panel3.Controls.Add(this.rMuertos);
-            this.panel3.Location = new System.Drawing.Point(200, 3);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(91, 79);
-            this.panel3.TabIndex = 24;
-            // 
             // pictureBox1
             // 
             this.pictureBox1.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -266,6 +242,18 @@
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
+            // panel2
+            // 
+            this.panel2.AutoSize = true;
+            this.panel2.Controls.Add(this.lblAlimentos);
+            this.panel2.Controls.Add(this.pictureBox2);
+            this.panel2.Controls.Add(this.lbqMas);
+            this.panel2.Controls.Add(this.qMuerto);
+            this.panel2.Location = new System.Drawing.Point(101, 3);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(93, 79);
+            this.panel2.TabIndex = 24;
+            // 
             // pictureBox2
             // 
             this.pictureBox2.Cursor = System.Windows.Forms.Cursors.Hand;
@@ -277,6 +265,18 @@
             this.pictureBox2.TabIndex = 21;
             this.pictureBox2.TabStop = false;
             this.pictureBox2.Click += new System.EventHandler(this.pictureBox2_Click);
+            // 
+            // panel3
+            // 
+            this.panel3.AutoSize = true;
+            this.panel3.Controls.Add(this.lblRatones);
+            this.panel3.Controls.Add(this.pictureBox3);
+            this.panel3.Controls.Add(this.lblBebes);
+            this.panel3.Controls.Add(this.rMuertos);
+            this.panel3.Location = new System.Drawing.Point(200, 3);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(91, 79);
+            this.panel3.TabIndex = 24;
             // 
             // pictureBox3
             // 
@@ -329,21 +329,24 @@
             this.Controls.Add(this.btnAvanzartimer);
             this.Controls.Add(this.lblDimension);
             this.Controls.Add(this.btnAvanzar);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "Simulacion";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Simulacion";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Simulacion_Load);
             this.Shown += new System.EventHandler(this.Simulacion_Shown);
             this.flowLayoutPanel1.ResumeLayout(false);
             this.flowLayoutPanel1.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.panelContenedor.ResumeLayout(false);
             this.ResumeLayout(false);

@@ -123,7 +123,7 @@ namespace tp1_simulacion
             int roedoresVivos = cantRoedores - CantRoedoresMuertos();
             if (roedoresVivos > dimensionIsla.X * dimensionIsla.Y)
                 estado = EEstado.SobrePoblacion;
-            else if (roedoresVivos == 0 && posiblesBebes == null)
+            else if (roedoresVivos == 0 && posiblesBebes.Count ==0)
             {
                 estado = EEstado.Eliminado;
             }
@@ -233,7 +233,7 @@ namespace tp1_simulacion
             }
         }
 
-        public int CantAlimentosDisponible()
+        public int CantAlimentosNoDisponible()
         {
             int cant = 0;
             foreach (Alimento item in alimentos)

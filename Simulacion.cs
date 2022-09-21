@@ -25,7 +25,7 @@ namespace tp1_simulacion
         {
             t = new Thread(new ThreadStart(StartForm));
             t.Start();
-            Thread.Sleep(100);
+            Thread.Sleep(200);
             this.Hide();
             InitializeComponent();
             //establece valores para optimizar el parpadeo de los controles
@@ -285,15 +285,16 @@ namespace tp1_simulacion
         {
             this.Cursor = Cursors.WaitCursor;
             bool estado = islaSimul.AvanzarPaso();
-            lblRatones.Text = islaSimul.CantRoedores.ToString();
-            lblBebes.Text = "+"+(islaSimul.CantRoedores - ratonInitial).ToString();
-            lblAlimentos.Text = (islaSimul.CantAlimentos).ToString();
+            lblRatones.Text = (islaSimul.CantRoedores - islaSimul.CantRoedoresMuertos()).ToString();
+            lblBebes.Text = "+" + (islaSimul.CantRoedores - ratonInitial).ToString();
+            lblAlimentos.Text = (islaSimul.CantAlimentos - islaSimul.CantAlimentosNoDisponible()).ToString();
             lbqMas.Text = "+"+(islaSimul.CantAlimentos - quesosInitial).ToString();
             rMuertos.Text = islaSimul.CantRoedoresMuertos().ToString();
-            qMuerto.Text = islaSimul.CantAlimentosDisponible().ToString();
+            qMuerto.Text = islaSimul.CantAlimentosNoDisponible().ToString();
             if (islaSimul is IslaPredador isl)
             {
                 gMuertos.Text = isl.CantPredadorMuertos().ToString();
+                lblGatos.Text = (isl.CantPredador- isl.CantPredadorMuertos()).ToString();
             }
             int diasp = islaSimul.Pasos/10;
             int pasosp = islaSimul.Pasos%10;
@@ -312,15 +313,14 @@ namespace tp1_simulacion
                     mess = "Se termino el juego (" + islaSimul.Estado + ") - Imposible renderizar";
                 else
                 {
-                    btnAvanzar.Enabled = false;
-                    btnAvanzartimer.Enabled = false;
-                    avanzarTimer.Stop();
                     AgregarAnimales();
                     AgregarPredador();
                     AgregarQueso();
                     ModificarTamanio();
                 }
-
+                btnAvanzar.Enabled = false;
+                btnAvanzartimer.Enabled = false;
+                avanzarTimer.Stop();
                 MessageBox.Show(mess,"FINALIZO SIMULACION",MessageBoxButtons.OK,MessageBoxIcon.Information);
             }
             if (avanzarTimer.Enabled)
@@ -449,7 +449,6 @@ namespace tp1_simulacion
                 hisAll.dgHistorial.Columns.Add("diasVida", "Dias s/Vida");
                 hisAll.dgHistorial.Columns.Add("diasComer", "Dias s/Comer");
                 hisAll.dgHistorial.Columns.Add("sexo", "Sexo");
-                hisAll.dgHistorial.Columns.Add("diasComer", "Dias s/Comer");
                 hisAll.dgHistorial.Columns.Add("muertes", "C. Muertes");
                 hisAll.dgHistorial.Columns.Add("estado", "Estado");
                 hisAll.dgHistorial.Columns.Add("historial", "Historial");
@@ -520,6 +519,7 @@ namespace tp1_simulacion
             hisAll.ShowDialog();
         }
         #endregion
+
     }
 
     #region PicturBox Transparente
