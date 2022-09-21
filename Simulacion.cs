@@ -310,7 +310,7 @@ namespace tp1_simulacion
             {
                 string mess = "Se termino el juego (" + islaSimul.Estado + ")";
                 if ((islaSimul.CantRoedores - islaSimul.CantRoedoresMuertos()) > 600)
-                    mess = "Se termino el juego (" + islaSimul.Estado + ") - Imposible renderizar";
+                    mess = "Se termino el juego (" + islaSimul.Estado + ") - Imposible renderizar!!!!";
                 else
                 {
                     AgregarAnimales();
