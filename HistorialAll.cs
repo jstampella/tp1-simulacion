@@ -19,6 +19,7 @@ namespace tp1_simulacion
             isll = islaSimul;
         }
 
+        #region dobleClick en la celda
         private void dgHistorial_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
         {
             if(e.RowIndex>-1 && e.RowIndex > -1)
@@ -66,6 +67,7 @@ namespace tp1_simulacion
             
         }
 
+        #endregion
         private void dgHistorial_SortCompare(object sender, DataGridViewSortCompareEventArgs e)
         {
             if (e.Column.Index == 0)

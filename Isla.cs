@@ -113,11 +113,10 @@ namespace tp1_simulacion
                     item.Morir(EEstadoVida.Inanicion);
                 }
             }
-            roedores.AddRange(posiblesBebes);
             if (posiblesBebes != null)
             {
-                CrearQuesos(posiblesBebes.Count/2);
-                cantAlimentos = alimentos.Count;
+                Raton[] misBebes = (Raton[])posiblesBebes.ToArray(typeof(Raton));
+                AgregarRatones(misBebes);
             }
             cantRoedores = roedores.Count;
             int roedoresVivos = cantRoedores - CantRoedoresMuertos();
@@ -170,7 +169,9 @@ namespace tp1_simulacion
 
         public void AgregarRatones(Raton[] ratones)
         {
-
+            roedores.AddRange(ratones);
+            CrearQuesos(ratones.Length / 2);
+            cantAlimentos = alimentos.Count;
         }
 
         public Animal VerRoedores(int pos)

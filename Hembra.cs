@@ -40,6 +40,7 @@ namespace tp1_simulacion
                     int tipo = random.Next(0, 2);
                     if (tipo == 1)
                     {
+                        
                         Hembra bb = new Hembra(posicion, limiteArea, pasos);
                         bebes[i] = bb;
                     }
