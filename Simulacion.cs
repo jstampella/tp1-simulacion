@@ -310,7 +310,7 @@ namespace tp1_simulacion
             {
                 string mess = "Se termino el juego (" + islaSimul.Estado + ")";
                 if ((islaSimul.CantRoedores - islaSimul.CantRoedoresMuertos()) > 600)
-                    mess = "Se termino el juego (" + islaSimul.Estado + ") - Imposible renderizar";
+                    mess = "Se termino el juego (" + islaSimul.Estado + ") - Imposible renderizar!!!!";
                 else
                 {
                     AgregarAnimales();
@@ -321,7 +321,20 @@ namespace tp1_simulacion
                 btnAvanzar.Enabled = false;
                 btnAvanzartimer.Enabled = false;
                 avanzarTimer.Stop();
-                MessageBox.Show(mess,"FINALIZO SIMULACION",MessageBoxButtons.OK,MessageBoxIcon.Information);
+                Resumen vresumen = new Resumen();
+                vresumen.numque.Text=(islaSimul.CantAlimentos- islaSimul.CantAlimentosNoDisponible()).ToString();
+                vresumen.quecomi.Text=islaSimul.CantAlimentosNoDisponible().ToString();
+                vresumen.vrata.Text=(islaSimul.CantRoedores-islaSimul.CantRoedoresMuertos()).ToString();
+                vresumen.mrata.Text=islaSimul.CantRoedoresMuertos().ToString();
+                if(islaSimul is IslaPredador )
+                { 
+                    vresumen.vgato.Text = (((IslaPredador)islaSimul).CantPredador-((IslaPredador)islaSimul).CantPredadorMuertos()).ToString();
+                    vresumen.mgato.Text = ((IslaPredador)islaSimul).CantPredadorMuertos().ToString();
+                    vresumen.pgato.Visible = true;
+                }
+                
+                vresumen.resul.Text = islaSimul.Estado.ToString();
+                vresumen.ShowDialog();
             }
             if (avanzarTimer.Enabled)
             {
