@@ -55,9 +55,13 @@ namespace tp1_simulacion
 
         public Raton[] Nacer()
         {
-            if (pasos - diasGestacion == 10)
+            if (pasos - diasGestacion == 10 && bebes!=null)
             {
                 diasGestacion = 0;
+                foreach (Raton item in bebes)
+                {
+                    item.Mover(this.pasos, this.posicion);
+                }
                 Raton[] bb = bebes;
                 bebes = null;
                 return bb;

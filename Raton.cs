@@ -44,10 +44,23 @@ namespace tp1_simulacion
             }
             if (posicion.X > limiteArea.X || posicion.X < 0 || posicion.Y > limiteArea.Y || posicion.Y < 0)
                 estado = EEstadoVida.Ahogamiento;
+            else
+                estado = EEstadoVida.Vivo;
             Historial his = new Historial(posicion, pasos, this.diasSinComer, this.ingestas, this.avance, this.estado);
             historial.Add(his);
         }
 
+        public void Mover(int pasos,Point posicion)
+        {
+            this.pasos = pasos;
+            this.posicion = posicion;
+            if (posicion.X > limiteArea.X || posicion.X < 0 || posicion.Y > limiteArea.Y || posicion.Y < 0)
+                estado = EEstadoVida.Ahogamiento;
+            else
+                estado = EEstadoVida.Vivo;
+            Historial his = new Historial(posicion, pasos, this.diasSinComer, this.ingestas, this.avance, this.estado);
+            historial.Add(his);
+        }
         public override void Morir(EEstadoVida estado)
         {
             if(estado == EEstadoVida.Inanicion)
@@ -85,7 +98,7 @@ namespace tp1_simulacion
 
         public override string ToString()
         {
-            throw new NotImplementedException();
+            return "ID:" + numeroIden + " Dias de vida:" + diasDeVida;
         }
 
         public override ESexo Sexo()

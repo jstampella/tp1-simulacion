@@ -29,17 +29,18 @@
         private void InitializeComponent()
         {
             this.dgHistorial = new System.Windows.Forms.DataGridView();
-            this.Posicion = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.diasSinComer = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Avance = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Dia = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.lbNro = new System.Windows.Forms.Label();
             this.lbEstado = new System.Windows.Forms.Label();
             this.lbVida = new System.Windows.Forms.Label();
-            this.Paso = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lblTipo = new System.Windows.Forms.Label();
+            this.Posicion = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.diasSinComer = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Avance = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Dia = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Paso = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.estado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgHistorial)).BeginInit();
             this.SuspendLayout();
             // 
@@ -54,7 +55,8 @@
             this.diasSinComer,
             this.Avance,
             this.Dia,
-            this.Paso});
+            this.Paso,
+            this.estado});
             this.dgHistorial.Location = new System.Drawing.Point(12, 113);
             this.dgHistorial.Name = "dgHistorial";
             this.dgHistorial.ReadOnly = true;
@@ -63,30 +65,6 @@
             this.dgHistorial.RowTemplate.Height = 24;
             this.dgHistorial.Size = new System.Drawing.Size(666, 325);
             this.dgHistorial.TabIndex = 0;
-            // 
-            // Posicion
-            // 
-            this.Posicion.HeaderText = "Posicion";
-            this.Posicion.MinimumWidth = 6;
-            this.Posicion.Name = "Posicion";
-            // 
-            // diasSinComer
-            // 
-            this.diasSinComer.HeaderText = "Dias sin Comer";
-            this.diasSinComer.MinimumWidth = 6;
-            this.diasSinComer.Name = "diasSinComer";
-            // 
-            // Avance
-            // 
-            this.Avance.HeaderText = "Avance";
-            this.Avance.MinimumWidth = 6;
-            this.Avance.Name = "Avance";
-            // 
-            // Dia
-            // 
-            this.Dia.HeaderText = "Dia";
-            this.Dia.MinimumWidth = 6;
-            this.Dia.Name = "Dia";
             // 
             // label2
             // 
@@ -141,12 +119,6 @@
             this.lbVida.TabIndex = 6;
             this.lbVida.Text = "0";
             // 
-            // Paso
-            // 
-            this.Paso.HeaderText = "Paso";
-            this.Paso.MinimumWidth = 6;
-            this.Paso.Name = "Paso";
-            // 
             // lblTipo
             // 
             this.lblTipo.AutoSize = true;
@@ -156,6 +128,48 @@
             this.lblTipo.Size = new System.Drawing.Size(117, 34);
             this.lblTipo.TabIndex = 7;
             this.lblTipo.Text = "label4";
+            // 
+            // Posicion
+            // 
+            this.Posicion.HeaderText = "Posicion";
+            this.Posicion.MinimumWidth = 6;
+            this.Posicion.Name = "Posicion";
+            this.Posicion.ReadOnly = true;
+            // 
+            // diasSinComer
+            // 
+            this.diasSinComer.HeaderText = "Dias sin Comer";
+            this.diasSinComer.MinimumWidth = 6;
+            this.diasSinComer.Name = "diasSinComer";
+            this.diasSinComer.ReadOnly = true;
+            // 
+            // Avance
+            // 
+            this.Avance.HeaderText = "Avance";
+            this.Avance.MinimumWidth = 6;
+            this.Avance.Name = "Avance";
+            this.Avance.ReadOnly = true;
+            // 
+            // Dia
+            // 
+            this.Dia.HeaderText = "Dia";
+            this.Dia.MinimumWidth = 6;
+            this.Dia.Name = "Dia";
+            this.Dia.ReadOnly = true;
+            // 
+            // Paso
+            // 
+            this.Paso.HeaderText = "Paso";
+            this.Paso.MinimumWidth = 6;
+            this.Paso.Name = "Paso";
+            this.Paso.ReadOnly = true;
+            // 
+            // estado
+            // 
+            this.estado.HeaderText = "Estado";
+            this.estado.MinimumWidth = 6;
+            this.estado.Name = "estado";
+            this.estado.ReadOnly = true;
             // 
             // FormHistorial
             // 
@@ -179,17 +193,18 @@
         }
 
         #endregion
-        private System.Windows.Forms.DataGridViewTextBoxColumn Posicion;
-        private System.Windows.Forms.DataGridViewTextBoxColumn diasSinComer;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Avance;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Dia;
         public System.Windows.Forms.DataGridView dgHistorial;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         public System.Windows.Forms.Label lbNro;
         public System.Windows.Forms.Label lbEstado;
         public System.Windows.Forms.Label lbVida;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Paso;
         public System.Windows.Forms.Label lblTipo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Posicion;
+        private System.Windows.Forms.DataGridViewTextBoxColumn diasSinComer;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Avance;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Dia;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Paso;
+        private System.Windows.Forms.DataGridViewTextBoxColumn estado;
     }
 }

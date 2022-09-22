@@ -65,7 +65,7 @@ namespace tp1_simulacion
             bool bandera = false;
             foreach (Animal item in roedores)
             {
-                if(item.Estado == EEstadoVida.Vivo)
+                if(item.Estado == EEstadoVida.Vivo || item.Estado == EEstadoVida.Gestando)
                 {
                     bandera = true;
                     if (item.Sexo() == ESexo.Hembra)

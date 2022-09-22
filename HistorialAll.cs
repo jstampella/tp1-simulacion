@@ -58,7 +58,7 @@ namespace tp1_simulacion
 
                     foreach (Historial item in hist)
                     {
-                        string[] rw = { item.Posicion.ToString(), item.DiasSinComer.ToString(), item.Avance.ToString(), item.Dia.ToString(), item.Paso.ToString() };
+                        string[] rw = { item.Posicion.ToString(), item.DiasSinComer.ToString(), item.Avance.ToString(), item.Dia.ToString(), item.Paso.ToString(),item.Estado.ToString() };
                         fm.dgHistorial.Rows.Add(rw);
                     }
                     fm.ShowDialog();
@@ -70,7 +70,7 @@ namespace tp1_simulacion
         #endregion
         private void dgHistorial_SortCompare(object sender, DataGridViewSortCompareEventArgs e)
         {
-            if (e.Column.Index == 0)
+            if (e.Column.Name == "nro" || e.Column.Name == "diasVida" || e.Column.Name == "diasComer" || e.Column.Name == "muertes")
             {
                 e.SortResult = int.Parse(e.CellValue1.ToString()).CompareTo(int.Parse(e.CellValue2.ToString()));
                 e.Handled = true;//pass by the default sorting

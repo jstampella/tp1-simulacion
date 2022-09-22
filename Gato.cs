@@ -91,7 +91,7 @@ namespace tp1_simulacion
                 posicion.Y = limiteArea.Y - 1;
             else if (posicion.Y <0)
                 posicion.Y = 0;
-
+            estado = EEstadoVida.Vivo;
             Historial his = new Historial(posicion, pasos, this.diasSinComer, this.ingestas, this.avance, this.estado);
             historial.Add(his);
 

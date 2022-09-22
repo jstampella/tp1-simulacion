@@ -11,7 +11,8 @@ namespace tp1_simulacion
         Ahogamiento,
         Inanicion,
         Pelea,
-        Vivo
+        Vivo,
+        Gestando
     }
 
     public enum ETipoAnimal

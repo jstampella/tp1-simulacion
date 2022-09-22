@@ -29,7 +29,7 @@ namespace tp1_simulacion
             this.diasSinComer = 0;
             this.ingestas = 0;
             this.limiteArea = limiteArea;
-            this.estado = EEstadoVida.Vivo;
+            this.estado = EEstadoVida.Gestando;
             this.diasDeVida = 0;
             this.avance = 0;
             this.pasos = pasosCreado;

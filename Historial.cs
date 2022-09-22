@@ -41,6 +41,11 @@ namespace tp1_simulacion
             get { return pasos % 10; }
         }
 
+        public EEstadoVida Estado
+        {
+            get { return estado; }
+        }
+
         public int DiasSinComer
         {
             get { return diasSinComer; }
