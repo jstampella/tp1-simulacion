@@ -10,16 +10,22 @@ namespace tp1_simulacion
     class Gato : Animal
     {
         private int muertes;
+
+        #region Constructor
         public Gato(Point posicion, Point limiteArea, int pasosCreado) : base(posicion, limiteArea, pasosCreado)
         {
             this.muertes = 0;
         }
+        #endregion
 
+        #region propiedades
         public int Muertes
         {
             get { return muertes; }
         }
+        #endregion
 
+        #region Matar()
         public void Matar(Object obj)
         {
             //accion matar
@@ -29,7 +35,9 @@ namespace tp1_simulacion
                 muertes++;
             }
         }
+        #endregion
 
+        #region Comer()
         public override void Comer(object obj)
         {
             if(obj is Raton aniR)
@@ -40,7 +48,9 @@ namespace tp1_simulacion
                 muertes++;
             }
         }
+        #endregion
 
+        #region Morir()
         public override void Morir(EEstadoVida estado)
         {
             if (estado == EEstadoVida.Inanicion)
@@ -53,7 +63,9 @@ namespace tp1_simulacion
             else
                 this.estado = estado;
         }
+        #endregion
 
+        #region Mover()
         public override void Mover()
         {
             pasos++;
@@ -96,22 +108,29 @@ namespace tp1_simulacion
             historial.Add(his);
 
         }
+        #endregion
 
+        #region Soy()
         public override ETipoAnimal Soy()
         {
             return ETipoAnimal.Gato;
         }
+        #endregion
 
+        #region TieneHambre()
         public override bool TieneHambre()
         {
             if (ingestas == 0) return true;
             else return false;
         }
+        #endregion
 
+        #region Sexo()
         public override ESexo Sexo()
         {
             return ESexo.Macho;
         }
+        #endregion
 
         public override string ToString()
         {

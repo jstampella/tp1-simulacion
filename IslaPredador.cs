@@ -46,7 +46,7 @@ namespace tp1_simulacion
                 estado = EEstado.SinPredador;
                 foreach (Animal item in predador)
                 {
-                    if (item.Estado == EEstadoVida.Vivo || item.Estado == EEstadoVida.Gestando)
+                    if (item.Estado == EEstadoVida.Vivo || item.Estado == EEstadoVida.Nacido)
                     {
                         estado = EEstado.Eliminado;
                         item.Mover();

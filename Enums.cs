@@ -12,7 +12,7 @@ namespace tp1_simulacion
         Inanicion,
         Pelea,
         Vivo,
-        Gestando
+        Nacido
     }
 
     public enum ETipoAnimal

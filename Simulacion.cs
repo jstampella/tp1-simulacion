@@ -157,7 +157,7 @@ namespace tp1_simulacion
                         Npanel.Cursor = Cursors.Hand;
                         mapa.Controls.Add(Npanel);
                     }
-                    if (nn.Estado == EEstadoVida.Vivo)
+                    if (nn.Estado == EEstadoVida.Vivo || nn.Estado == EEstadoVida.Nacido)
                     {
                         MoverElemento(nn.Posicion.X, nn.Posicion.Y, Npanel);
                     }
@@ -197,7 +197,7 @@ namespace tp1_simulacion
                         Npanel.Image = Properties.Resources.raton;
                     mapa.Controls.Add(Npanel);
                 }
-                if (nn.Estado == EEstadoVida.Vivo)
+                if (nn.Estado == EEstadoVida.Vivo || nn.Estado == EEstadoVida.Nacido)
                 {
                     if(nn is Hembra nnH)
                     {
@@ -211,7 +211,7 @@ namespace tp1_simulacion
                     }
                 }
 
-                if (nn.Estado == EEstadoVida.Vivo)
+                if (nn.Estado == EEstadoVida.Vivo || nn.Estado == EEstadoVida.Nacido)
                 {
                     MoverElemento(nn.Posicion.X, nn.Posicion.Y, Npanel);
                 }
@@ -433,7 +433,7 @@ namespace tp1_simulacion
 
                 foreach (Historial item in hist)
                 {
-                    string[] rw = { item.Posicion.ToString(),item.DiasSinComer.ToString(),item.Avance.ToString(),item.Dia.ToString(), item.Paso.ToString() };
+                    string[] rw = { item.Posicion.ToString(),item.DiasSinComer.ToString(),item.Avance.ToString(),item.Dia.ToString(), item.Paso.ToString(),item.Estado.ToString() };
                     fm.dgHistorial.Rows.Add(rw);
                 }
                 fm.ShowDialog();

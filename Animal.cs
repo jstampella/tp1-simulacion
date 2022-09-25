@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace tp1_simulacion
 {
-    public abstract class Animal : IAnimal
+    public abstract class Animal
     {
         protected Point posicion;
         private static int nro = 0;
@@ -29,7 +29,7 @@ namespace tp1_simulacion
             this.diasSinComer = 0;
             this.ingestas = 0;
             this.limiteArea = limiteArea;
-            this.estado = EEstadoVida.Gestando;
+            this.estado = EEstadoVida.Nacido;
             this.diasDeVida = 0;
             this.avance = 0;
             this.pasos = pasosCreado;
@@ -39,6 +39,7 @@ namespace tp1_simulacion
             historial.Add(his);
         }
 
+        #region Propiedades
         public static int NroStatic
         {
             set { nro = value; }
@@ -79,6 +80,7 @@ namespace tp1_simulacion
             get { return pasos; }
         }
 
+        #endregion
         public abstract void Mover();
         public abstract void Comer(object obj);
         public abstract void Morir(EEstadoVida estado);

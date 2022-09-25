@@ -70,7 +70,6 @@
     <Compile Include="HistorialAll.Designer.cs">
       <DependentUpon>HistorialAll.cs</DependentUpon>
     </Compile>
-    <Compile Include="IAnimal.cs" />
     <Compile Include="Isla.cs" />
     <Compile Include="IslaPredador.cs" />
     <Compile Include="Loading.cs">

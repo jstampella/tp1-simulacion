@@ -58,10 +58,5 @@ namespace tp1_simulacion
         {
             get { return posicion; }
         }
-
-        public override string ToString()
-        {
-            return "posicion: " + posicion;
-        }
     }
 }

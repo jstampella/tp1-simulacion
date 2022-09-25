@@ -13,6 +13,7 @@ namespace tp1_simulacion
         {
         }
 
+        #region Mover()
         public override void Mover()
         {
             pasos++;
@@ -50,6 +51,9 @@ namespace tp1_simulacion
             historial.Add(his);
         }
 
+        #endregion
+
+        #region Mover(pasos, posicion)
         public void Mover(int pasos,Point posicion)
         {
             this.pasos = pasos;
@@ -61,6 +65,9 @@ namespace tp1_simulacion
             Historial his = new Historial(posicion, pasos, this.diasSinComer, this.ingestas, this.avance, this.estado);
             historial.Add(his);
         }
+        #endregion
+
+        #region Morir()
         public override void Morir(EEstadoVida estado)
         {
             if(estado == EEstadoVida.Inanicion)
@@ -73,12 +80,15 @@ namespace tp1_simulacion
             else
                 this.estado = estado;
         }
+        #endregion
+
 
         public override ETipoAnimal Soy()
         {
             return ETipoAnimal.Raton;
         }
 
+        #region Comer()
         public override void Comer(object obj)
         {
             if(obj is Queso qs)
@@ -88,6 +98,7 @@ namespace tp1_simulacion
                 diasSinComer = 0;
             }
         }
+        #endregion
 
         public override bool TieneHambre()
         {
